@@ -42,7 +42,7 @@
      systemctl stop firewalld  
    ##### 禁用firewalld服务  
      systemctl mask firewalld 
- #### 设置现有规则
+ #### (1)设置现有规则
       #查看iptables现有规则  
       iptables -L -n  
       
@@ -87,7 +87,7 @@
       
       #所有转发一律丢弃  
       iptables -P FORWARD DROP  
-#### 其他规则设定(选用)
+####  (2)其他规则设定(选用)
       #如果要添加内网ip信任（接受其所有TCP请求）  
       iptables -A INPUT -p tcp -s (你的IP) -j ACCEPT  
       
@@ -99,11 +99,11 @@
       
       #要解封一个IP，使用下面这条命令:  
       iptables -D INPUT -s ***.***.***.*** -j DROP  
-#### 保存规则设定
+####  (3)保存规则设定
       #保存上述规则  
       service iptables save  
      
-#### 开启iptables服务
+####  (4)开启iptables服务
       #注册iptables服务,相当于以前的chkconfig iptables on  
       systemctl enable iptables.service  
       
@@ -113,7 +113,7 @@
       #查看状态  
       systemctl status iptables.service  
       
-#### 以下为完整设置脚本(选看)
+####  (5)以下为完整设置脚本(选看)
       #!/bin/sh  
       iptables -P INPUT ACCEPT  
       iptables -F  
@@ -132,7 +132,7 @@
       service iptables save  
       systemctl restart iptables.service 
       
- #### iptables添加或者删除端口
+ ####  (6)iptables添加或者删除端口
        #直接修改文件 
        vim /etc/sysconfig/iptables 
        
@@ -278,7 +278,8 @@
         如果没有开放端口则加入如下的命令，8089就是我刚才更改的端口
         -A INPUT -p tcp -m state --state NEW -m tcp --dport 8089 -j ACCEPT
 #### 11.阿里云服务器安全组添加
-      阿里云服务器除了在服务器上添加端口之外，必须要在云控制台上添加安全组规则，才能是这个端口使用起来
+        阿里云服务器除了在服务器上添加端口之外，必须要在云控制台上添加安全组规则，才能是这个端口使用起来 
+        可参考阿里云官方文档：https://help.aliyun.com/document_detail/25471.html
         
          
          
