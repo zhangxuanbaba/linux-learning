@@ -82,9 +82,10 @@
  ### 1.下载-admin的war包
         下载dubbo-admin.war包，在Linux的tomcat部署，官网：http://dubbo.io/
  ### 2.解压war包并放入到tomcat中
-        安装unzip：yum install -y unzip zip
-        解压war包：unzip dubbo-admin-2.8.4.war 
-        配置文件：修改 dubbo-admin的WEB_INFO文件夹下面的dubbo.properties
+        删除webApps里面的所有文件，并且创建一个dubbo-admin的文件夹
+        安装unzip：yum install -y unzip zip
+        解压war包：unzip dubbo-admin-2.8.4.war ，将war解压到之前创建的dubbo-admin的文件夹中
+        配置文件：修改 dubbo-admin的WEB_INFO文件夹下面的dubbo.properties
 
         #zookeeper的集群地址
         dubbo.registry.address=zookeeper://127.0.0.1:3210?backup=127.0.0.1:3220,127.0.0.1:3230
