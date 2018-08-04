@@ -85,7 +85,7 @@
 
 注: 也可把之前的zoo.cfg文件全部删除 然后把下面的代码直接copy到zoo.cfg
 
-![zookeeper](http://47.93.176.227:8888//group1/M00/8A/05/L12w41tlQvGAbXfoAAgpiltiLn8815.jpg "zookeeper")
+![](http://47.93.176.227:8888//group1/M00/8A/05/L12w41tlQvGAbXfoAAgpiltiLn8815.jpg)
 
 
 		# 服务器之间或客户端与服务器之间维持心跳的时间间隔(基本事件单元，以毫秒为单位)，也就是每隔 tickTime时间就会发送一个心跳。
