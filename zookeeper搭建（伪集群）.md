@@ -5,13 +5,14 @@
 1. zookeeper是一个类似hdfs的树形文件结构，zookeeper可以用来保证数据在(zk)集 群之间的数据的事务性一致。
 2. zookeeper有watch事件，是一次性触发的，当watch监视的数据发生变化时，通 知设置了该watch的client，即watcher。
 3. zookeeper有三个角色: Learder，Follower，Observer4 zookeeper应用场景。
-统一命名服务(Name Service)
-配置管理(Configuration Management)
-集群管理(Group Membership)
-共享锁(Locks)
-队列管理
+统一命名服务(Name Service)	
+配置管理(Configuration Management)	
+集群管理(Group Membership)	
+共享锁(Locks)	
+队列管理	
 
 ##### (二) Zookeeper配置(搭建zookeeper服务器集群)
+
 1. 结构:一共三个节点 (zk服务器集群规模不小于3个节点),要求服务器之间系统时间保持一致。
 
 ###### 创建文件存放目录
@@ -39,23 +40,29 @@
 		cd /usr/local/zookeeper-3.4.5
 
 ###### 对zookeeper文件名进行更改 更改为node1(其中一个子节点)
+
 		mv /usr/local/zookeeper-3.4.5/zookeeper-3.4.5/ /usr/local/zookeeper-3.4.5/node1
 
 ###### 更改后文件显示如下
+
 		[root@localhost zookeeper-3.4.5]# ls -l
 		total 4
 		drwxr-xr-x 10 501 games 4096 Nov  5  2012 node1
 
 ###### 进入到其中一个node节点
+
 		[root@localhost zookeeper-3.4.5]# cd /usr/local/zookeeper-3.4.5/node1/
 
 ###### 在node1节点下创建data目录 data目录是用来存放myid文件的 在其后的zoo.cfg中会用到(后面有介绍)
+
 		[root@localhost node1]# mkdir -p /usr/local/zookeeper-3.4.5/node1/data
 
 ###### 在node1节点下创建logs目录 logs目录用来存放zookeeper文件输出
+
 		mkdir -p /usr/local/zookeeper-3.4.5/node1/logs
 
 ###### 在data下创建myid文件 myid为了标识zookeeper的节点
+
 		[root@localhost node1]# vim /usr/local/zookeeper-3.4.5/node1/data/myid
 
 ###### 服务器标识配置: myid (内容为服务器标识 : 1)
@@ -64,13 +71,16 @@
 		1 (在myid文件中 添加一个字”1”)
 
 ###### 进入到zookeeper node1中的conf文件夹
+
 		cd /usr/local/zookeeper-3.4.5/node1/conf/
 
 ###### copy zookeeper node1的配置 然后对其进行修改
+
 		[root@localhost conf]# cp /usr/local/zookeeper-3.4.5/node1/conf/zoo_sample.cfg /usr/local/
 		zookeeper-3.4.5/node1/conf/zoo.cfg
 
 ###### 修改zoo.cfg文件
+
 		[root@localhost conf]# sudo vim /usr/local/zookeeper-3.4.5/node1/conf/zoo.cfg
 
 注: 也可把之前的zoo.cfg文件全部删除 然后把下面的代码直接copy到zoo.cfg
@@ -101,6 +111,7 @@
 		server.3=ip:3231:3232
 
 ok, 目前为至, 其中一个节点已经搭建好了 
+
 ##### 注意: 现在不能启动该节点, 会报错, 目前该节点还不能找到集群中的其他两个节点
 
 ###### 把node1节点复制一份到node2 并修改node2的相关配置
@@ -128,6 +139,7 @@ ok, 目前为至, 其中一个节点已经搭建好了
 		clientPort=3220
 		
 ok, 到此zookeepr第二个节点搭建完毕
+
 ##### 把node1节点复制一份到node3 并修改node3的相关配置
 
 		[root@localhost node2]# cp -r /usr/local/zookeeper-3.4.5/node1/ /usr/local/zookeeper-3.4.5/node3
