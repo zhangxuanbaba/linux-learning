@@ -73,7 +73,11 @@
 ###### 修改zoo.cfg文件
 		[root@localhost conf]# sudo vim /usr/local/zookeeper-3.4.5/node1/conf/zoo.cfg
 
-注: 也可把之前的zoo.cfg文件全部删除 然后把下面的代码直接copy到zoo.cfg![zookeeper](http://47.93.176.227:8888//group1/M00/8A/05/L12w41tlQvGAbXfoAAgpiltiLn8815.jpg "zookeeper")
+注: 也可把之前的zoo.cfg文件全部删除 然后把下面的代码直接copy到zoo.cfg
+
+![zookeeper](http://47.93.176.227:8888//group1/M00/8A/05/L12w41tlQvGAbXfoAAgpiltiLn8815.jpg "zookeeper")
+
+
 		# 服务器之间或客户端与服务器之间维持心跳的时间间隔(基本事件单元，以毫秒为单位)，也就是每隔 tickTime时间就会发送一个心跳。
 		tickTime=2000
 		# 这个配置项是用来配置 Zookeeper 接受客户端初始化连接时最长能忍受多少个心跳时间间隔数，当已经超过 10 个心跳的时间(也就是 tickTime)长度后 Zookeeper 服务器还没有收到客户端的返回信息，那么表明这个客户端连接失败。总的时间长度就是10*2000=20 秒。
@@ -99,18 +103,21 @@
 ok, 目前为至, 其中一个节点已经搭建好了 
 ##### 注意: 现在不能启动该节点, 会报错, 目前该节点还不能找到集群中的其他两个节点
 
-######把node1节点复制一份到node2 并修改node2的相关配置
+###### 把node1节点复制一份到node2 并修改node2的相关配置
 
 		[root@localhost conf]# cp -r /usr/local/zookeeper-3.4.5/node1/ /usr/local/zookeeper-3.4.5/node2
 
-######到node2节点路径下
+###### 到node2节点路径下
+
 		[root@localhost zookeeper-3.4.5]# cd /usr/local/zookeeper-3.4.5/node2/
 
-######修改data文件中的myid 把当前myid为1的值 修改为2
+###### 修改data文件中的myid 把当前myid为1的值 修改为2
+
 		[root@localhost node2]# sudo vim /usr/local/zookeeper-3.4.5/node2/data/myid
 		2
 
 ###### 修改zookeeper中node2的zoo.cfg配置
+
 		[root@localhost node2]# sudo vim /usr/local/zookeeper-3.4.5/node2/conf/zoo.cfg
 
 		# 注意把之前dataDir中的node1 换成了node2
@@ -119,19 +126,23 @@ ok, 目前为至, 其中一个节点已经搭建好了
 		dataLogDir=/usr/local/zookeeper-3.4.5/node2/logs
 		# 把端口号从3210换为了3220
 		clientPort=3220
+		
 ok, 到此zookeepr第二个节点搭建完毕
-#####把node1节点复制一份到node3 并修改node3的相关配置
+##### 把node1节点复制一份到node3 并修改node3的相关配置
 
 		[root@localhost node2]# cp -r /usr/local/zookeeper-3.4.5/node1/ /usr/local/zookeeper-3.4.5/node3
 
-######到node3节点路径下
+###### 到node3节点路径下
+
 		[root@localhost zookeeper-3.4.5]# cd /usr/local/zookeeper-3.4.5/node3/
 
-######修改data文件中的myid 把当前myid为1的值 修改为3
+###### 修改data文件中的myid 把当前myid为1的值 修改为3
+
 		[root@han node3]# sudo vim /usr/local/zookeeper-3.4.5/node3/data/myid
 		3
 
-######修改zookeeper中node3的zoo.cfg配置
+###### 修改zookeeper中node3的zoo.cfg配置
+
 		[root@han node3]# sudo vim /usr/local/zookeeper-3.4.5/node3/conf/zoo.cfg
 
 		# 注意把之前dataDir中的node1 换成了node3
