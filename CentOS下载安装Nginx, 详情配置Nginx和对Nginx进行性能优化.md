@@ -278,11 +278,11 @@ Nginx启动,关闭,重启命令：
 #### 四．配置tomcat集群负载均衡（这里我们之间配置2个tomcat到nginx里，然后进行测试）
 
 #### 五．其他配置信息文件说明
-参考博客1：http://blog.csdn.net/wave_1102/article/details/44475093
-参考博客2：http://blog.csdn.net/shimiso/article/details/8690897
-参考博客3：https://blog.csdn.net/hanwuqia0370/article/details/78151934
+参考博客1：http://blog.csdn.net/wave_1102/article/details/44475093 <br/>
+参考博客2：http://blog.csdn.net/shimiso/article/details/8690897 <br/>
+参考博客3：https://blog.csdn.net/hanwuqia0370/article/details/78151934 <br/>
 
 #### 六: HTTP状态检测
 
-检测http状态工具: 站长之家
-http状态码大全: 百度百科
+检测http状态工具: 站长之家 <br/>
+http状态码大全: 百度百科 <br/>
