@@ -83,8 +83,8 @@
 
 		[root@localhost conf]# sudo vim /usr/local/zookeeper-3.4.5/node1/conf/zoo.cfg
 
-注: 也可把之前的zoo.cfg文件全部删除 然后把下面的代码直接copy到zoo.cfg
 
+注: 也可把之前的zoo.cfg文件全部删除 然后把下面的代码直接copy到zoo.cfg
 ![](http://47.93.176.227:8888//group1/M00/8A/05/L12w41tlQvGAbXfoAAgpiltiLn8815.jpg)
 
 
@@ -109,7 +109,7 @@
 		server.1=ip:3211:3212
 		server.2=ip:3221:3222
 		server.3=ip:3231:3232
-
+		
 ok, 目前为至, 其中一个节点已经搭建好了 
 
 ##### 注意: 现在不能启动该节点, 会报错, 目前该节点还不能找到集群中的其他两个节点
