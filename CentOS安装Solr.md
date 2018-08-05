@@ -193,7 +193,10 @@ OK, 至此Solr搭建完毕!
 
 创建Core Admin
 
+
 ![](https://img-blog.csdn.net/20180117094422962?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvaGFud3VxaWEwMzcw/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast)
+
+		(图片地址)https://img-blog.csdn.net/20180117094422962?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvaGFud3VxaWEwMzcw/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast
 
 注: 此处相当于建造一个关系型数据库的表, 用来存放数据的
 
