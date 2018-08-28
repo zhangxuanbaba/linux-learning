@@ -544,6 +544,14 @@ http://ip:8888/group1/M00/00/00/L12w41nsu2-AHA7xAAVFOL7FJU4.tar.gz
 
 ------------
 
+启动命令：
+		tracker server : /usr/local/bin/fdfs_trackerd /etc/fdfs/tracker.conf
+		storaged server: /usr/local/bin/fdfs_storaged /etc/fdfs/storage.conf
+		一般使用fastdfs还需要使用到它的映射nginx
+		启动命令
+		nginx :/usr/local/nginx2/sbin/nginx
+
+
 #### FastDFS问题记录:
 
 ##### 问题一:
